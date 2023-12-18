@@ -1,7 +1,7 @@
 
 package ec.edu.ups.est.dao.idao;
 
-import ec.edu.ups.est.dao.modelo.Biblioteca;
+import ec.edu.ups.est.dao.modelo.*;
 import java.util.List;
 
 public interface IBibliotecaDAO {

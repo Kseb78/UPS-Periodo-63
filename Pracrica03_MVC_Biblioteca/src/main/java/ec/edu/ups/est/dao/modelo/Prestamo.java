@@ -18,18 +18,12 @@ public class Prestamo {
 	this.fechaDevolucion = fechaDevolucion;       
     }
 
-    public Prestamo(Libro libro, Usuario usuario, Date fechaPrestamo, Date fechaDevolucion) {
-	this.libro = libro;
-	this.usuario = usuario;
-	this.fechaPrestamo = fechaPrestamo;
-	this.fechaDevolucion = fechaDevolucion;
-    }
     public Prestamo(Libro libro, Date fechaPrestamo, Date fechaDevolucion) {
 	this.libro = libro;
 	this.fechaPrestamo = fechaPrestamo;
 	this.fechaDevolucion = fechaDevolucion;
     }	
-    public Prestamo(Libro libro, Usuario usuario, Date fechaPrestamo) {
+    public Prestamo(Libro libro, Usuario usuario,Date fechaPrestamo, Date fechaDevolucion) {
 	this.libro = libro;
 	this.usuario = usuario;
 	this.fechaPrestamo = fechaPrestamo;
@@ -123,7 +117,7 @@ public class Prestamo {
 
     @Override
     public String toString() {
-	return "Prestamo [libro=" + libro + ", usuario=" + usuario + ", fechaPrestamo=" + fechaPrestamo
+	return "Prestamo [libro=" + libro + " fechaPrestamo=" + fechaPrestamo
 				+ ", fechaDevolucion=" + fechaDevolucion + "]";
     }
 }    

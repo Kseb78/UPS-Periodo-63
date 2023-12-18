@@ -45,6 +45,30 @@ public class LibroControlador {
             libroVista.mostrarInformacionLibro(libro);
         }
     }
+    public void buscarLibroPorAutor()
+    {
+        String autor = libroVista.buscarDatosLibroAutor();
+        libro = libroDAO.obtenerLibroPorAutor(autor);
+        if(libro==null)
+        {
+            libroVista.mostrarAlertas("Libro no encontrado");
+        }else
+        {
+            libroVista.mostrarInformacionLibro(libro);
+        }
+    }
+    public void buscarLibroPorAnio()
+    {
+        int anio = libroVista.buscarDatosLibroAnio();
+        libro = libroDAO.obtenerLibro(anio);
+        if(libro==null)
+        {
+            libroVista.mostrarAlertas("Libro no encontrado");
+        }else
+        {
+            libroVista.mostrarInformacionLibro(libro);
+        }
+    }
     
     public void listarLibros(){
         List<Libro> listaLibros = libroDAO.obtenerLibros();

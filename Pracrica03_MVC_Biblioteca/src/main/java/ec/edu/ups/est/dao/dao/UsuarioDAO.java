@@ -2,6 +2,7 @@
 package ec.edu.ups.est.dao.dao;
 
 import ec.edu.ups.est.dao.idao.IUsuarioDAO;
+import ec.edu.ups.est.dao.modelo.Prestamo;
 import ec.edu.ups.est.dao.modelo.Usuario;
 import java.util.ArrayList;
 import java.util.List;
@@ -19,9 +20,9 @@ public class UsuarioDAO implements IUsuarioDAO{
     }
 
     @Override
-    public Usuario obtenerUsuario(String nombre) {
+    public Usuario obtenerUsuario(String identificacion) {
         for(Usuario usuario:listaUsuarios){
-            if(usuario.getNombre().equalsIgnoreCase(nombre)){
+            if(usuario.getIdentificacion().equalsIgnoreCase(identificacion)){
                 return usuario;
             }
         }
@@ -44,10 +45,10 @@ for(Usuario usuario:listaUsuarios){
     }
 
     @Override
-    public boolean actualizarUsuario(String nombre, Usuario usuario) {
+    public boolean actualizarUsuario(String identificacion, Usuario usuario) {
         for (int i = 0; i < listaUsuarios.size(); i++) {
             Usuario usuarioEncontrado = listaUsuarios.get(i);
-            if(usuarioEncontrado.getNombre().equalsIgnoreCase(nombre)){
+            if(usuarioEncontrado.getIdentificacion().equalsIgnoreCase(identificacion)){
                 listaUsuarios.set(i, usuario);
                 return true;
             }            
@@ -56,15 +57,16 @@ for(Usuario usuario:listaUsuarios){
     }
 
     @Override
-    public boolean eliminarUsuario(String nombre) {
+    public boolean eliminarUsuario(String identificacion) {
         for (int i = 0; i < listaUsuarios.size(); i++) {
             Usuario usuarioEncontrado = listaUsuarios.get(i);
-            if(usuarioEncontrado.getNombre().equalsIgnoreCase(nombre)){
+            if(usuarioEncontrado.getIdentificacion().equalsIgnoreCase(identificacion)){
                 listaUsuarios.remove(i);
                 return true;
             }            
         }
         return false;        
     }
+
     
 }

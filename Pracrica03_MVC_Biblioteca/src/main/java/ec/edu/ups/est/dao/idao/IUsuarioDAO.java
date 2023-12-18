@@ -1,6 +1,7 @@
 
 package ec.edu.ups.est.dao.idao;
 
+import ec.edu.ups.est.dao.modelo.Prestamo;
 import ec.edu.ups.est.dao.modelo.Usuario;
 import java.util.List;
 

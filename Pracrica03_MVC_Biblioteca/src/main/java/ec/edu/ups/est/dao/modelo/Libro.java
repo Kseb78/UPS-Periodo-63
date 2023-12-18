@@ -4,7 +4,7 @@ package ec.edu.ups.est.dao.modelo;
 import interfaces.Prestable;
 import java.util.Objects;
 
-public class Libro extends Persona implements Prestable{
+public class Libro implements Prestable{
     private String titulo;
     private String autor;
     private int anio;
@@ -18,11 +18,6 @@ public class Libro extends Persona implements Prestable{
 	this.autor = autor;
 	this.anio = anio;
 	this.disponible = disponible;
-    }
-
-    @Override
-    public void mostrarDatos() {
-        // TODO Auto-generated method stub
     }
 
     @Override

@@ -69,7 +69,7 @@ public class LibroDAO implements ILibroDAO{
     public boolean eliminarLibro(String titulo) {
         for (int i = 0; i < listaLibros.size(); i++) {
             Libro ibroEncontrado = listaLibros.get(i);
-            if(ibroEncontrado.getNombre().equalsIgnoreCase(titulo)){
+            if(ibroEncontrado.getTitulo().equalsIgnoreCase(titulo)){
                 listaLibros.remove(i);
                 return true;
             }            

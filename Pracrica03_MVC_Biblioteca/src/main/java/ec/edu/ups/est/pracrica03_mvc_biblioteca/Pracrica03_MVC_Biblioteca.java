@@ -35,17 +35,16 @@ public class Pracrica03_MVC_Biblioteca {
                  BibliotecaControlador bibliotecaControlador = new BibliotecaControlador(bibliotecaDAO, bibliotecaVista, usuarioDAO, usuarioVista, libroDAO, libroVista);
                  LibroControlador libroControlador = new LibroControlador(libroDAO, libroVista);
                  PrestamoControlador prestamoControlador = new PrestamoControlador(prestamoDAO, prestamoVista, usuarioDAO, usuarioVista, libroDAO, libroVista);
-                 UsuarioControlador usuarioControlador = new UsuarioControlador(usuarioDAO, usuarioVista, prestamoDAO, prestamoVista);
+                 UsuarioControlador usuarioControlador = new UsuarioControlador(usuarioDAO, usuarioVista, prestamoDAO, prestamoVista,libroDAO,libroVista);
                  
 		 int opcion;
 		 do {
 			 	 System.out.println(" ");
-                                 System.out.println("bienvenido");
+                                 System.out.println("Bienvenido");
 				 System.out.println("1. Biblioteca");
                                  System.out.println("2. Usuario");
                                  System.out.println("3. Libros");
-                                 System.out.println("4. Prestamos");
-                                 System.out.println("5. Salir");
+                                 System.out.println("4. Salir");
                                  System.out.print("Ingrese su opción: ");
 
 				 opcion = scanner.nextInt();
@@ -54,12 +53,16 @@ public class Pracrica03_MVC_Biblioteca {
                       // Menú de Biblioteca
                     boolean salirBiblioteca = false;
                     while (!salirBiblioteca) {
+                        System.out.println(" ");
                         System.out.println("Biblioteca");
                         System.out.println("1. Crear Biblioteca");
                         System.out.println("2. buscar Biblioteca");
                         System.out.println("3. Actualizar Biblioteca");
                         System.out.println("4. Eliminar Biblioteca");
-                        System.out.println("5. Regresar al Menú Principal");
+                        System.out.println("5. Agregar Libros a Biblioteca");
+                        System.out.println("6. Agregar Usuarios a Biblioteca");
+                        System.out.println("7. Listar Bibliotecas");
+                        System.out.println("8. Regresar al Menú Principal");
                         System.out.print("Ingrese su opción: ");
 
                         int opcionBiblioteca = scanner.nextInt();
@@ -78,8 +81,17 @@ public class Pracrica03_MVC_Biblioteca {
                                 bibliotecaControlador.eliminarBiblioteca();
                                 break;
                             case 5:
-                                salirBiblioteca = true;
+                                bibliotecaControlador.agregarLibros();
                                 break;
+                            case 6:
+                                bibliotecaControlador.agregarUsuarios();
+                                break;                                
+                            case 7:
+                                bibliotecaControlador.listarBibliotecas();
+                                break;  
+                            case 8:
+                                salirBiblioteca = true;
+                                break;                                 
                             default:
                                 System.out.println("Opción no válida. Inténtelo de nuevo.");
                         }
@@ -90,13 +102,15 @@ public class Pracrica03_MVC_Biblioteca {
                      // Menú de Usuario
                     boolean salirUsuario = false;
                     while (!salirUsuario) {
+                        System.out.println(" ");
                         System.out.println("Usuario");
                         System.out.println("1. Registrar Usuario");
                         System.out.println("2. Buscar Usuario");
                         System.out.println("3. Actualizar Usuario");
                         System.out.println("4. Eliminar Usuario");
                         System.out.println("5. Listar Usuarios");
-                        System.out.println("6. Regresar al Menú Principal");
+                        System.out.println("6. Prestamo");
+                        System.out.println("7. Regresar al Menú Principal");
                         System.out.print("Ingrese su opción: ");
 
                         int opcionUsuario = scanner.nextInt();
@@ -104,6 +118,7 @@ public class Pracrica03_MVC_Biblioteca {
                         switch (opcionUsuario) {
                             case 1:
                                 usuarioControlador.crearUsuario();
+                                
                                 break;
                             case 2:
                                 usuarioControlador.buscarUsuarioPorNombre();
@@ -118,72 +133,24 @@ public class Pracrica03_MVC_Biblioteca {
                                 usuarioControlador.listarUsuarios();
                                 break;
                             case 6:
-                                salirUsuario = true;
-                                break;
-                            default:
-                                System.out.println("Opción no válida. Inténtelo de nuevo.");
-                        }
-                    }
-                    break;
-
-		 case 3:
-                      // Menú de Libros
-                    boolean salirLibros = false;
-                    while (!salirLibros) {
-                        System.out.println("Libros");
-                        System.out.println("1. Crear Libro");
-                        System.out.println("2. Buscar Libro por Título");                     
-                        System.out.println("3. Actualizar Libro");
-                        System.out.println("4. Eliminar Libro");
-                        System.out.println("5. Listar Libros");
-                        System.out.println("6. Regresar al Menú Principal");
-                        System.out.print("Ingrese su opción: ");
-
-                        int opcionLibros = scanner.nextInt();
-
-                        switch (opcionLibros) {
-                            case 1:
-                                libroControlador.crearLibro();
-                                break;
-                            case 2:
-                                libroControlador.buscarLibroPorTitulo();
-                                break;                           
-                            case 3:
-                                libroControlador.actualizarLibro();
-                                break;
-                            case 4:
-                                libroControlador.eliminarLibro();
-                                break;
-                            case 5:
-                                libroControlador.listarLibros();
-                                break;
-                            case 6:
-                                salirLibros = true;
-                                break;
-                            default:
-                                System.out.println("Opción no válida. Inténtelo de nuevo.");
-                        }
-                    }
-                    break;
-		 
-		 case 4:
-                     // Menú de Préstamos
                     boolean salirPrestamos = false;
                     while (!salirPrestamos) {
+                        System.out.println(" ");
                         System.out.println("Préstamos");
                         System.out.println("1. Crear Préstamo");
                         System.out.println("2. Buscar Préstamo");                      
                         System.out.println("3. Actualizar Préstamo");
                         System.out.println("4. Eliminar Préstamo");
-                        System.out.println("5. Mostrar Todos los Préstamos");
-                        System.out.println("6. Regresar al Menú Principal");
+                        System.out.println("5. Listar Préstamos");
+                        System.out.println("6. Devolver Préstamo");
+                        System.out.println("7. Regresar al Menú Principal");
                         System.out.print("Ingrese su opción: ");
 
                         int opcionPrestamos = scanner.nextInt();
 
                         switch (opcionPrestamos) {
                             case 1:
-                                prestamoControlador.crearPrestamo();
+                                usuarioControlador.agregarPrestamo();
                                 break;
                             case 2:
                                 prestamoControlador.obtenerPrestamosPorFechaPrestamo();
@@ -198,25 +165,81 @@ public class Pracrica03_MVC_Biblioteca {
                                 prestamoControlador.listarPrestamos();
                                 break;
                             case 6:
-                                salirPrestamos = true;
+                                usuarioControlador.devolverPrestamo();
                                 break;
+                            case 7:
+                                salirPrestamos = true;
+                                break;                                
+                            default:
+                                System.out.println("Opción no válida. Inténtelo de nuevo.");
+                        }
+                    }
+                            case 7:
+                                salirUsuario = true;
+                                break;                                
                             default:
                                 System.out.println("Opción no válida. Inténtelo de nuevo.");
                         }
                     }
                     break;
 
-		 
-		 case 5:
-                     salirBiblioteca = true;
-                    break;
+		 case 3:
+                      // Menú de Libros
+                    boolean salirLibros = false;
+                    while (!salirLibros) {
+                        System.out.println(" ");
+                        System.out.println("Libros");
+                        System.out.println("1. Crear Libro");
+                        System.out.println("2. Buscar Libro por Título"); 
+                        System.out.println("3. Buscar Libro por Autor"); 
+                        System.out.println("4. Buscar Libro por Anio"); 
+                        System.out.println("5. Actualizar Libro");
+                        System.out.println("6. Eliminar Libro");
+                        System.out.println("7. Listar Libros");
+                        System.out.println("8. Regresar al Menú Principal");
+                        System.out.print("Ingrese su opción: ");
+
+                        int opcionLibros = scanner.nextInt();
+
+                        switch (opcionLibros) {
+                            case 1:
+                                libroControlador.crearLibro();
+                                break;
+                            case 2:
+                                libroControlador.buscarLibroPorTitulo();
+                                break;                           
+                            case 3:
+                                libroControlador.buscarLibroPorAutor();
+                                break;  
+                            case 4:
+                                libroControlador.buscarLibroPorAnio();
+                                break;  
+                            case 5:
+                                libroControlador.actualizarLibro();
+                                break;
+                            case 6:
+                                libroControlador.eliminarLibro();
+                                break;
+                            case 7:
+                                libroControlador.listarLibros();
+                                break;
+                            case 8:
+                                salirLibros = true;
+                                break;
+                            default:
+                                System.out.println("Opción no válida. Inténtelo de nuevo.");
+                        }
+                    }
+		 case 4:
+                     System.out.println("Gracias por usar el programa, FELIZ NAVIDAD!");
+                    break;                   
 
                 default:
                     System.out.println("Opción no válida. Inténtelo de nuevo.");
                     		 
 		 }
 		 } 
-                 while (opcion != 5);
+                 while (opcion != 4);
 		 scanner.close();
 	}
     

@@ -25,9 +25,11 @@ public class PrestamoVista {
             System.out.println("Ingresa el año: ");
             int anio = entrada.nextInt();
             fechaPrestamo = new Date(anio, (mes-1), dia);    
-            fechaDevolucion = new Date(anio,(mes-1),(dia+4));
+            Prestamo prestamo = new Prestamo();
+            int diasPrestamo = prestamo.calcularDiasPrestamo(dia);
+            fechaDevolucion = new Date(anio,(mes-1),(diasPrestamo));
         
-        return new Prestamo(fechaPrestamo, fechaDevolucion);
+        return new Prestamo(null,fechaPrestamo, fechaDevolucion);
     }
     public Prestamo actualizarDatosPrestamo(){
         System.out.println("------Actualizar prestamo------");      

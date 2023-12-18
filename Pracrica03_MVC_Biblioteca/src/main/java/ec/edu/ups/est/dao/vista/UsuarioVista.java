@@ -22,25 +22,25 @@ public class UsuarioVista {
     }
     public Usuario actualizarDatosUsuario(){
         System.out.println("actualice usuario");
+        System.out.println("ingrese la identificaion del usuario a actualizar");
+        String identificaion = entrada.next();
         System.out.println("ingrese el nombre del usuario");
         String nombre = entrada.next();
         System.out.println("ingrese el correo del usuario");
         String correo = entrada.next();
-        System.out.println("ingrese la identificaion del usuario");
-        String identificaion = entrada.next();
         return new Usuario(correo,nombre,identificaion); 
     }
     public String eliminarDatosUsuario(){
         System.out.println("eliminar usuario");
-        System.out.println("ingrese el nombre de la biblioteca");
-        String nombre = entrada.next();
-        return nombre;
+        System.out.println("ingrese la identificaion del usuario");
+        String identificacion = entrada.next();
+        return identificacion;
     }
     public String buscarDatosUsuario(){
         System.out.println("------Buscar Usuario------");
-        System.out.println("Ingresa el nombre del usuario a buscar");
-        String nombre = entrada.next();
-        return nombre;
+        System.out.println("Ingresa la identificacion del usuario a buscar");
+        String identificacion = entrada.next();
+        return identificacion;
     } 
     public int agregarPrestamoAUsuario(){
         System.out.println("------Agregar prestamo a usuario------");

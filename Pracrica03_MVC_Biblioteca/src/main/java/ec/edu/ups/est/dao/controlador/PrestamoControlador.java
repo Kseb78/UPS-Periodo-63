@@ -18,7 +18,7 @@ public class PrestamoControlador {
     private PrestamoVista prestamoVista;
     private Prestamo prestamo;
     
-    private IUsuarioDAO usuarioDao;
+    private IUsuarioDAO usuarioDAO;
     private UsuarioVista usuarioVista;
     private Usuario usuario;
     
@@ -29,16 +29,12 @@ public class PrestamoControlador {
     public PrestamoControlador(IPrestamoDAO prestamoDAO, PrestamoVista prestamoVista, IUsuarioDAO usuarioDao, UsuarioVista usuarioVista, ILibroDAO libroDAO, LibroVista libroVista) {
         this.prestamoDAO = prestamoDAO;
         this.prestamoVista = prestamoVista;
-        this.usuarioDao = usuarioDao;
+        this.usuarioDAO = usuarioDao;
         this.usuarioVista = usuarioVista;
         this.libroDAO = libroDAO;
         this.libroVista = libroVista;
     }
     
-    public void crearPrestamo(){
-        prestamo = prestamoVista.ingresarDatosPrestamo();
-        prestamoDAO.crearPrestamo(prestamo);
-    }
     public void actualizarPrestamo()
     {
         prestamo = prestamoVista.actualizarDatosPrestamo();

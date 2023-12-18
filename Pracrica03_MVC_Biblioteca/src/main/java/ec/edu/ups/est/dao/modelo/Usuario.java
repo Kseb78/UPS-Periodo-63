@@ -14,20 +14,15 @@ public class Usuario extends Persona {
     public Usuario(){
 		this.listaPrestamos = new ArrayList<>();
 	}
-
-	public Usuario(String correo) {
-		this.correo = correo;
-		this.listaPrestamos= new ArrayList<>();
-	}
 	public Usuario(String correo,String nombre,String identificacion) {
 		super(nombre, identificacion);
 		this.correo = correo;
+                this.listaPrestamos = new ArrayList<>();
 	}
 	public Usuario(String correo,String nombre,String identificacion,Prestamo prestamo) {
 		super(nombre, identificacion);
 		this.correo = correo;
-		this.listaPrestamos= new ArrayList<>();
-		listaPrestamos.add(prestamo);
+		this.listaPrestamos = new ArrayList<>();
 	}
 
 	public Usuario(String nombre, String identificacion) {
@@ -44,28 +39,14 @@ public class Usuario extends Persona {
         }
         public void agregarPrestamo(Prestamo prestamo)
 	{
-		listaPrestamos.add(prestamo);
+            listaPrestamos.add(prestamo);
 	}
-
-	
-	public void devolverLibro(Libro libro,Usuario usuario)
+        
+        public void devolverLibro(Prestamo prestamo)
 	{
-		libro.setDisponible(true);
-		Date fecha = new Date();
-		Prestamo prestamo = new Prestamo(libro, usuario,fecha,new Date(fecha.getYear(), fecha.getMonth(), fecha.getDate()+9));
-		Usuario usuario1 = new Usuario ();
-		usuario1.agregarPrestamo(prestamo);
-		for (Prestamo prestamo1 : usuario1.getListaPrestamos())
-		{
-			if (prestamo1.getLibro().equals(libro))
-			{
-				int fechaDevolucion = prestamo1.getFechaPrestamo().getDate();
-				prestamo1.esPrestamoVigente(fechaDevolucion);
-				System.out.println("Ahora el libro "+prestamo1.getLibro().getTitulo()+" esta disponible");
-				libro.devolver();
-			}
-		}
+            listaPrestamos.remove(prestamo);
 	}
+	
 
     @Override
     public int hashCode() {

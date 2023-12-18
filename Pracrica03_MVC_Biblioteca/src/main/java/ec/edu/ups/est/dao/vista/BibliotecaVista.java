@@ -20,7 +20,7 @@ public class BibliotecaVista {
     }
     public Biblioteca actualizarDatosBiblioteca(){
         System.out.println("actualizar biblioteca");
-        System.out.println("ingrese el nombre de la biblioteca");
+        System.out.println("ingrese el nombre de la biblioteca a actualizar");
         String nombre = entrada.next();
         System.out.println("ingrese la direccion de la biblioteca");
         String direccion = entrada.next();
@@ -34,7 +34,7 @@ public class BibliotecaVista {
     }
     public String buscarDatosBiblioteca(){
         System.out.println("------Buscar Biblioteca------");
-        System.out.println("Ingresa el nombre del libro a buscar");
+        System.out.println("Ingresa el nombre de la biblioteca a buscar");
         String nombre = entrada.next();
         return nombre;
     } 
