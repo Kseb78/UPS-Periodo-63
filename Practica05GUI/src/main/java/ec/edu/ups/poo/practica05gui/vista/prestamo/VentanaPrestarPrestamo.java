@@ -188,7 +188,6 @@ public class VentanaPrestarPrestamo extends javax.swing.JInternalFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void comboBibliotecasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboBibliotecasActionPerformed
-    
         int codigo = Integer.parseInt(comboBibliotecas.getSelectedItem().toString());
         
         for(Biblioteca biblioteca : prestamoControlador.toListBiblioteca())
@@ -206,6 +205,7 @@ public class VentanaPrestarPrestamo extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No se han ingresado todos los datos");            
         }else
         {
+
             String titulo = comboLibros.getSelectedItem().toString();
             String identificacion = comboUsuarios.getSelectedItem().toString();        
 

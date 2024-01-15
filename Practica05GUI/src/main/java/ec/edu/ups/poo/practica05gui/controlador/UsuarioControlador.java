@@ -54,12 +54,4 @@ public class UsuarioControlador {
             usuarioVista.mostrarInformacionUsuario(usuario);
         }
     }*/
-    public void agregarPrestamo()
-    {
-        
-    }
-    public void devolverPrestamo()
-    {
-        
-    }
 }

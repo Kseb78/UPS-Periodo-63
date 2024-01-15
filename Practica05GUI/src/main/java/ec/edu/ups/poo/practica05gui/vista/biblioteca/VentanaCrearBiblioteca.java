@@ -175,16 +175,16 @@ public class VentanaCrearBiblioteca extends javax.swing.JInternalFrame{
         txtTelefonoBiblioteca.setText("");
     }
     
-    public void cambiarIdioma(Locale locale)
-    {
-        ResourceBundle mensajes = ResourceBundle.getBundle("mensajes.mensajes",locale); 
-        codigoBiblioteca.setText(mensajes.getString("codigoBiblioteca"));
-        nombreBiblioteca.setText(mensajes.getString("nombreBiblioteca"));
-        direccionBiblioteca.setText(mensajes.getString("direccionBiblioteca"));
-        telefonoBiblioteca.setText(mensajes.getString("telefonoBiblioteca"));
-        btncrearBiblioteca.setText(mensajes.getString("btncrearBiblioteca"));
-              
-    }
+        public void cambiarIdioma(Locale locale)
+        {
+            ResourceBundle mensajes = ResourceBundle.getBundle("mensajes.mensajes",locale); 
+            codigoBiblioteca.setText(mensajes.getString("codigoBiblioteca"));
+            nombreBiblioteca.setText(mensajes.getString("nombreBiblioteca"));
+            direccionBiblioteca.setText(mensajes.getString("direccionBiblioteca"));
+            telefonoBiblioteca.setText(mensajes.getString("telefonoBiblioteca"));
+            btncrearBiblioteca.setText(mensajes.getString("btncrearBiblioteca"));
+
+        }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btncrearBiblioteca;

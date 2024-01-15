@@ -70,6 +70,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     public VentanaPrincipal() {
         this.setContentPane(fondo);
         initComponents();//Metodos despues del initComponents
+        this.setIconImage(new ImageIcon(getClass().getResource("/imagenes/iconoAplicacion.png")).getImage());
         this.setExtendedState(VentanaPrincipal.MAXIMIZED_BOTH);
         this.setTitle("Sistema de Biblioteca - UPS");
         bibliotecaDAO = new BibliotecaDAO();
@@ -145,7 +146,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         );
         desktopPaneLayout.setVerticalGroup(
             desktopPaneLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 411, Short.MAX_VALUE)
+            .addGap(0, 451, Short.MAX_VALUE)
         );
 
         getContentPane().add(desktopPane, java.awt.BorderLayout.CENTER);
@@ -412,6 +413,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaCrearLibro==null)
         {
             ventanaCrearLibro = new VentanaCrearLibro(libroControlador);
+            ventanaCrearLibro.cambiarIdioma(locale);
         }
         
         if(!ventanaCrearLibro.isVisible())
@@ -425,6 +427,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaBuscarLibro==null)
         {
             ventanaBuscarLibro = new VentanaBuscarLibro(libroControlador);
+            ventanaBuscarLibro.cambiarIdioma(locale);
         }
         
         if(!ventanaBuscarLibro.isVisible())
@@ -438,6 +441,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEditarLibro==null)
         {
             ventanaEditarLibro = new VentanaEditarLibro(libroControlador);
+            ventanaEditarLibro.cambiarIdioma(locale);
         }
 
         if(!ventanaEditarLibro.isVisible())
@@ -451,6 +455,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaListarBiblioteca==null)
         {
             ventanaListarBiblioteca = new VentanaListarBiblioteca(bibliotecaControlador);
+            
         }
 
         if(!ventanaListarBiblioteca.isVisible())
@@ -465,6 +470,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEliminarBiblioteca==null)
         {
             ventanaEliminarBiblioteca = new VentanaEliminarBiblioteca(bibliotecaControlador);
+            ventanaEliminarBiblioteca.cambiarIdioma(locale);
         }
 
         if(!ventanaEliminarBiblioteca.isVisible())
@@ -478,6 +484,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEditarBiblioteca==null)
         {
             ventanaEditarBiblioteca = new VentanaEditarBiblioteca(bibliotecaControlador);
+            ventanaEditarBiblioteca.cambiarIdioma(locale);
         }
 
         if(!ventanaEditarBiblioteca.isVisible())
@@ -491,6 +498,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaBuscarBiblioteca==null)
         {
             ventanaBuscarBiblioteca = new VentanaBuscarBiblioteca(bibliotecaControlador);
+            ventanaBuscarBiblioteca.cambiarIdioma(locale);
         }
 
         if(!ventanaBuscarBiblioteca.isVisible())
@@ -515,6 +523,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaCrearUsuario==null)
         {
             ventanaCrearUsuario = new VentanaCrearUsuario(usuarioControlador);
+            ventanaCrearUsuario.cambiarIdioma(locale);
         }
 
         if(!ventanaCrearUsuario.isVisible())
@@ -528,6 +537,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEliminarLibro==null)
         {
             ventanaEliminarLibro = new VentanaEliminarLibro(libroControlador);
+            ventanaEliminarLibro.cambiarIdioma(locale);
+        
         }
 
         if(!ventanaEliminarLibro.isVisible())
@@ -541,6 +552,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaListarLibro==null)
         {
             ventanaListarLibro = new VentanaListarLibro(libroControlador);
+            
         }
 
         if(!ventanaListarLibro.isVisible())
@@ -555,6 +567,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaBuscarUsuario==null)
         {
             ventanaBuscarUsuario = new VentanaBuscarUsuario(usuarioControlador);
+            ventanaBuscarUsuario.cambiarIdioma(locale);
         }
 
         if(!ventanaBuscarUsuario.isVisible())
@@ -568,6 +581,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaActualizarUsuario==null)
         {
             ventanaActualizarUsuario = new VentanaActualizarUsuario(usuarioControlador);
+            ventanaActualizarUsuario.cambiarIdioma(locale);
         }
 
         if(!ventanaActualizarUsuario.isVisible())
@@ -581,6 +595,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEliminarUsuario==null)
         {
             ventanaEliminarUsuario = new VentanaEliminarUsuario(usuarioControlador);
+            ventanaEliminarUsuario.cambiarIdioma(locale);
         }
 
         if(!ventanaEliminarUsuario.isVisible())
@@ -617,6 +632,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaPrestarPrestamo==null)
         {
             ventanaPrestarPrestamo = new VentanaPrestarPrestamo(prestamoControlador);
+            ventanaPrestarPrestamo.cambiarIdioma(locale);
         }
 
         if(!ventanaPrestarPrestamo.isVisible())
@@ -630,6 +646,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaBuscarPrestamo==null)
         {
             ventanaBuscarPrestamo = new VentanaBuscarPrestamo(prestamoControlador);
+            ventanaBuscarPrestamo.cambiarIdioma(locale);
         }
 
         if(!ventanaBuscarPrestamo.isVisible())
@@ -643,6 +660,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEditarPrestamo==null)
         {
             ventanaEditarPrestamo = new VentanaEditarPrestamo(prestamoControlador);
+            ventanaEditarPrestamo.cambiarIdioma(locale);
         }
 
         if(!ventanaEditarPrestamo.isVisible())
@@ -656,6 +674,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaEliminarPrestamo==null)
         {
             ventanaEliminarPrestamo = new VentanaEliminarPrestamo(prestamoControlador);
+            ventanaEliminarPrestamo.cambiarIdioma(locale);
         }
 
         if(!ventanaEliminarPrestamo.isVisible())
@@ -669,6 +688,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         if(ventanaListarPrestamo==null)
         {
             ventanaListarPrestamo = new VentanaListarPrestamo(prestamoControlador);
+            
         }
 
         if(!ventanaListarPrestamo.isVisible())

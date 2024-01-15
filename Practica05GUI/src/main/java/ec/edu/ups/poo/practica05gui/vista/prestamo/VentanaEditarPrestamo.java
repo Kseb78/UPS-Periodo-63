@@ -11,6 +11,7 @@ import ec.edu.ups.poo.practica05gui.modelo.Prestamo;
 import ec.edu.ups.poo.practica05gui.modelo.Usuario;
 import java.awt.Graphics;
 import java.awt.Image;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 import java.util.Locale;
@@ -236,6 +237,7 @@ public class VentanaEditarPrestamo extends javax.swing.JInternalFrame {
             JOptionPane.showMessageDialog(this, "No se han ingresado todos los datos");            
         }else
         {
+
             String titulo = comboLibros.getSelectedItem().toString();
             String identificacion = comboUsuarios.getSelectedItem().toString();        
             int codigo = Integer.parseInt(txtCodigoPrestamo.getText());
